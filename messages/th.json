@@ -1,0 +1,140 @@
+{
+  "home": {
+    "carbonManagement": "การจัดการคาร์บอน",
+    "getStartedWith": "เริ่มต้นกับ",
+    "didYouKnow": "คุณรู้หรือไม่?",
+    "averageGHGEmission": "คนไทยปล่อยก๊าซเรือนกระจกเฉลี่ย 4-5 tCO₂eq/ปี",
+    "chatWithAI": "พูดคุยกับ AI"
+  },
+  "navbar": {
+    "general": "ทั่วไป",
+    "home": "หน้าแรก",
+    "dashboard": "แดชบอร์ด",
+    "mapDashboard": "แผนที่แดชบอร์ด",
+    "certification": "การรับรอง",
+    "carbonCalculation": "คำนวณคาร์บอน",
+    "monitorEmissions": "ติดตามการปล่อย",
+    "auditingSupport": "สนับสนุนการตรวจสอบ",
+    "repairSystem": "ระบบซ่อมแซม",
+    "requestRepair": "ขอซ่อมแซม",
+    "repairAssignment": "มอบหมายซ่อมแซม",
+    "myRepairJob": "งานซ่อมของฉัน",
+    "trackingEvaluate": "ติดตามและประเมินผล",
+    "repairHistory": "ประวัติการซ่อม",
+    "pmWork": "ระบบตรวจเช็ค PM/AM",
+    "checkSheetCreate": "สร้าง/ตรวจเช็คชีท",
+    "holidayCalendar": "ปฏิทินวันหยุด",
+    "schedule": "กำหนดการ",
+    "calendar": "ปฏิทิน",
+    "history": "ประวัติ",
+    "sparePartsSystem": "ระบบอะไหล่",
+    "sparePartInventory": "สต็อกอะไหล่",
+    "receiveSparePart": "รับอะไหล่",
+    "returnBrokenSpare": "คืนอะไหล่ที่เสียหาย",
+    "sparePartReceived": "รับอะไหล่แล้ว",
+    "sparePartHistory": "ประวัติอะไหล่",
+    "approval": "อนุมัติ",
+    "propertyRegistration": "การลงทะเบียนทรัพย์สิน",
+    "deviceMachineList": "รายการอุปกรณ์/เครื่องจักร",
+    "borrowReturnTool": "ยืมและคืนเครื่องมือ",
+    "userManagement": "การจัดการผู้ใช้",
+    "customerManagement": "การจัดการลูกค้า",
+    "setting": "ตั้งค่า",
+    "others": "อื่นๆ",
+    "pricing": "ราคา"
+  },
+  "checksheet": {
+    "createPlan": "สร้างแผน",
+    "instruction": "คำแนะนำการทำงาน",
+    "createCheckSheet": "สร้างเช็คชีท",
+    "createPMAMPlan": "สร้างแผน PM/AM",
+    "checkSheetAdded": "เพิ่มเช็คชีทเรียบร้อยแล้ว",
+    "checkSheetDeleted": "ลบเช็คชีทเรียบร้อยแล้ว",
+    "pmamPlanAdded": "เพิ่มแผน PM/AM เรียบร้อยแล้ว",
+    "pmamPlanDeleted": "ลบแผน PM/AM เรียบร้อยแล้ว",
+    "confirmDeleteCheckSheet": "คุณแน่ใจหรือว่าต้องการลบเช็คชีทนี้?",
+    "confirmDeletePMAMPlan": "คุณแน่ใจหรือว่าต้องการลบแผน PM/AM นี้?",
+    "newCheckSheetName": "ชื่อเช็คชีทใหม่",
+    "checkSheetType": "ประเภทเช็คชีท",
+    "checkSheetName": "ชื่อเช็คชีท",
+    "department": "แผนก",
+    "documentNo": "หมายเลขเอกสาร",
+    "revisionNo": "หมายเลขการปรับปรุง",
+    "validDate": "วันที่มีผลบังคับใช้",
+    "image": "รูปภาพ",
+    "save": "บันทึก",
+    "cancel": "ยกเลิก",
+    "machineType": "ประเภทเครื่องจักร",
+    "machineName": "ชื่อเครื่องจักร",
+    "machineLocation": "สถานที่ตั้งเครื่องจักร",
+    "frequency": "ความถี่",
+    "startDate": "วันที่เริ่มต้น",
+    "createdBy": "สร้างโดย",
+    "dateCreated": "วันที่สร้าง",
+    "action": "การกระทำ",
+    "edit": "แก้ไข",
+    "delete": "ลบ"
+  },
+  "PricingPage": {
+    "title": "แผนราคา",
+    "subtitle": "ค้นหาแผนที่เหมาะสมกับความต้องการของคุณ",
+    "perDevice": "อุปกรณ์",
+    "customPrice": "กำหนดเอง",
+    "plans": [
+      {
+        "name": "ระบบการจัดการบำรุงรักษาด้วยคอมพิวเตอร์",
+        "price": "฿40",
+        "description": "จัดการการบำรุงรักษาป้องกันและแก้ไข",
+        "features": [
+          "ฟีเจอร์ PM/CM",
+          "รายงานการขอร้อง",
+          "การจัดการอะไหล่",
+          "การจัดการผู้ใช้",
+          "แดชบอร์ดสำหรับ PM/CM",
+          "การสนับสนุนจากชุมชน"
+        ],
+        "buttonText": "เลือกแผน"
+      },
+      {
+        "name": "ระบบตรวจสอบ IoT อัจฉริยะ",
+        "price": "฿350",
+        "description": "ระบบตรวจสอบ IoT สำหรับองค์กรของคุณ",
+        "features": [
+          "ฟีเจอร์ CMMS",
+          "แดชบอร์ดตรวจสอบแบบเรียลไทม์",
+          "การแจ้งเตือน",
+          "การตรวจสอบคาร์บอนฟุตพรินต์",
+          "การสนับสนุนทางอีเมล"
+        ],
+        "buttonText": "เลือกแผน"
+      },
+      {
+        "name": "ระบบการจัดการ IoT อัจฉริยะ",
+        "price": "฿550",
+        "description": "เพิ่มฟีเจอร์จาก IoT และการให้คำปรึกษาเชิงอุตสาหกรรม",
+        "features": [
+          "ฟีเจอร์ CMMS",
+          "ฟีเจอร์ตรวจสอบ IoT",
+          "ควบคุมอุปกรณ์ด้วย MQTT",
+          "การควบคุมอุปกรณ์ตามกำหนดการ",
+          "การสนับสนุนทางอีเมลพร้อม SLA"
+        ],
+        "buttonText": "เลือกแผน"
+      },
+      {
+        "name": "IoT ENTERPRISE",
+        "price": "กำหนดเอง",
+        "description": "สำหรับอุปกรณ์ IoT ขนาดใหญ่และการปฏิบัติตามมาตรฐานความปลอดภัย",
+        "features": [
+          "ผู้จัดการการสนับสนุนที่ได้รับมอบหมาย",
+          "SLA ความพร้อมใช้งาน",
+          "การสนับสนุนในสถานที่*",
+          "การสนับสนุนแบบพรีเมียม 24×7×365",
+          "ช่องทางส่วนตัว",
+          "แบบสอบถามความปลอดภัยเฉพาะ"
+        ],
+        "buttonText": "ติดต่อเรา"
+      }
+    ]
+  }
+}

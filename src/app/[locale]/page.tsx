@@ -1,0 +1,81 @@
+'use client';
+
+import React, { useState, useEffect, useCallback } from 'react';
+import Image from 'next/image';
+import { useTranslations } from 'next-intl';
+import { useTheme } from '@/context/ThemeContext';
+import FullCalendar from '@fullcalendar/react';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import interactionPlugin from '@fullcalendar/interaction';
+import timeGridPlugin from '@fullcalendar/timegrid';
+
+interface CalendarEvent {
+  id: string;
+  title: string;
+  start: string;
+  end?: string;
+}
+
+const initialEvents: CalendarEvent[] = [
+  {
+    id: '1',
+    title: 'PM Plan - Example',
+    start: '2024-10-30',
+  },
+];
+
+const Home: React.FC = () => {
+  const t = useTranslations('home');
+  const { isDarkMode, toggleTheme } = useTheme();
+
+  const [events, setEvents] = useState<CalendarEvent[]>(initialEvents);
+
+  const handleDateClick = (arg: any) => {
+    alert('Date clicked: ' + arg.dateStr);
+  };
+
+  const handleEventDrop = (eventDropInfo: any) => {
+    const updatedEvents = events.map((event) =>
+      event.id === eventDropInfo.event.id
+        ? { ...event, start: eventDropInfo.event.startStr }
+        : event
+    );
+    setEvents(updatedEvents);
+  };
+
+  useEffect(() => {}, []);
+
+  return (
+    <div className="flex bg-cover bg-center bg-no-repeat min-h-screen w-full overflow-auto  dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+      <div className="w-full relative flex flex-col md:items-center md:justify-center p-8 space-y-6">
+        <div className="text-center relative rounded-3xl shadow-lg w-full max-w-4xl p-4 md:p-8 bg-white bg-opacity-40 dark:bg-gray-800 dark:bg-opacity-60 transition-colors duration-300">
+          {/*<div className="flex justify-center">
+            <Image
+              src={isDarkMode ? '/limbic-white-logo.webp' : '/limbic-logo.webp'}
+              width={400}
+              height={400}
+              alt="Logo"
+            />
+          </div>*/}
+
+          <FullCalendar
+            plugins={[dayGridPlugin, interactionPlugin, timeGridPlugin]}
+            initialView="dayGridMonth"
+            events={events}
+            dateClick={handleDateClick}
+            editable={true}
+            droppable={true}
+            eventDrop={handleEventDrop}
+            headerToolbar={{
+              left: 'prev,next today',
+              center: 'title',
+              right: 'dayGridMonth,timeGridWeek,timeGridDay',
+            }}
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Home;
