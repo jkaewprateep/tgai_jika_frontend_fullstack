@@ -1,0 +1,140 @@
+{
+  "home": {
+    "carbonManagement": "Carbon Management",
+    "getStartedWith": "Get started with",
+    "didYouKnow": "Did you know?",
+    "averageGHGEmission": "The average greenhouse gas emission in Thailand is 4-5 tCO₂eq/year",
+    "chatWithAI": "Chat with AI"
+  },
+  "navbar": {
+    "general": "General",
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "mapDashboard": "Map Dashboard",
+    "certification": "Certification",
+    "carbonCalculation": "Carbon Calculation",
+    "monitorEmissions": "Monitor Emissions",
+    "auditingSupport": "Auditing Support",
+    "repairSystem": "Repair System",
+    "requestRepair": "Request Repair",
+    "repairAssignment": "Repair Assignment",
+    "myRepairJob": "My Repair Job",
+    "trackingEvaluate": "Tracking and Evaluate",
+    "repairHistory": "Repair History",
+    "pmWork": "PM/AM Check System",
+    "checkSheetCreate": "Check Sheet/Create",
+    "holidayCalendar": "Holiday Calendar",
+    "schedule": "Schedule",
+    "calendar": "Calendar",
+    "history": "History",
+    "sparePartsSystem": "Spare Parts System",
+    "sparePartInventory": "Spare Part Inventory",
+    "receiveSparePart": "Receive Spare Part",
+    "returnBrokenSpare": "Return Broken Spare",
+    "sparePartReceived": "Spare Part Received",
+    "sparePartHistory": "Spare Part History",
+    "approval": "Approval",
+    "propertyRegistration": "Property Registration",
+    "deviceMachineList": "Device / Machine List",
+    "borrowReturnTool": "Borrow & Return Tool",
+    "userManagement": "User Management",
+    "customerManagement": "Customer Management",
+    "setting": "Setting",
+    "others": "Others",
+    "pricing": "Pricing"
+  },
+  "checksheet": {
+    "createPlan": "Create Plan",
+    "instruction": "Work Instruction",
+    "createCheckSheet": "Create Check Sheet",
+    "createPMAMPlan": "Create PM/AM Plan",
+    "checkSheetAdded": "Check Sheet Added Successfully",
+    "checkSheetDeleted": "Check Sheet Deleted Successfully",
+    "pmamPlanAdded": "PM/AM Plan Added Successfully",
+    "pmamPlanDeleted": "PM/AM Plan Deleted Successfully",
+    "confirmDeleteCheckSheet": "Are you sure you want to delete this Check Sheet?",
+    "confirmDeletePMAMPlan": "Are you sure you want to delete this PM/AM Plan?",
+    "newCheckSheetName": "New Check Sheet Name",
+    "checkSheetType": "Check Sheet Type",
+    "checkSheetName": "Check Sheet Name",
+    "department": "Department",
+    "documentNo": "Document No.",
+    "revisionNo": "Revision No.",
+    "validDate": "Valid Date (Effective date)",
+    "image": "Image",
+    "save": "Save",
+    "cancel": "Cancel",
+    "machineType": "Machine Type",
+    "machineName": "Machine Name",
+    "machineLocation": "Machine Location",
+    "frequency": "Frequency",
+    "startDate": "Start Date",
+    "createdBy": "Created By",
+    "dateCreated": "Date Created",
+    "action": "Action",
+    "edit": "Edit",
+    "delete": "Delete"
+  },
+  "PricingPage": {
+    "title": "Pricing Plans",
+    "subtitle": "Find the perfect plan for your needs.",
+    "perDevice": "Device",
+    "customPrice": "Custom",
+    "plans": [
+      {
+        "name": "Computerized Maintenance Management System",
+        "price": "฿40",
+        "description": "Manage your Preventive and Corrective.",
+        "features": [
+          "PM/CM Features",
+          "Request Reporting",
+          "Spare Part Management",
+          "User Management",
+          "Dashboard for PM/CM",
+          "Community support"
+        ],
+        "buttonText": "Select Plan"
+      },
+      {
+        "name": "Smart IoT Monitoring System",
+        "price": "฿350",
+        "description": "IoT Monitoring System for your Organization.",
+        "features": [
+          "CMMS Features",
+          "Real-time Monitoring Dashboard",
+          "Alerts and Notifications",
+          "Carbon Footprint Monitoring",
+          "Email support"
+        ],
+        "buttonText": "Select Plan"
+      },
+      {
+        "name": "Smart IoT Management System",
+        "price": "฿550",
+        "description": "Add features from IoT and Industrial Consult.",
+        "features": [
+          "CMMS Features",
+          "IoT Monitoring Features",
+          "Control devices with MQTT",
+          "Scheduled device control",
+          "Priority email support & SLAs"
+        ],
+        "buttonText": "Select Plan"
+      },
+      {
+        "name": "IoT ENTERPRISE",
+        "price": "Custom",
+        "description": "For large-scale IoT devices and Security Compliance.",
+        "features": [
+          "Designated Support manager",
+          "Uptime SLAs",
+          "On-premise support*",
+          "24×7×365 premium enterprise support",
+          "Private channel",
+          "Custom Security Questionnaires"
+        ],
+        "buttonText": "Contact Us"
+      }
+    ]
+  }
+}
