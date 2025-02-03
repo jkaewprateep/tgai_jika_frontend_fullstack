@@ -1,2 +1,0 @@
-# tgai_jika_frontend_fullstack
-tgai_jika_frontend_fullstack
