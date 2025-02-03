@@ -49,6 +49,9 @@ const RobotDetailPage: React.FC<RobotDetailPageProps> = ({ robotId }) => {
   //   { symbol: "SQQQ", trend: "down", price: "14.25" },
   // ];
 
+  const [stockdatasource, setStockdatasource] = useState({
+    data: "Alpaca Trading",
+  });
   const [stockdata1, setStockdata1] = useState({ data: stocks });
   const [balancedata1, setbalancedata1] = useState({ data: balanceData });
 
@@ -224,6 +227,24 @@ const RobotDetailPage: React.FC<RobotDetailPageProps> = ({ robotId }) => {
   async function loaddata_stocks() {
     let url = "http://localhost:8083/";
 
+    switch (stockdatasource.data) {
+      case "Alpaca Trading":
+        // code block
+        url = "http://localhost:8083/";
+        break;
+      case "Polygon":
+        // code block
+        url = "http://localhost:8083/";
+        break;
+      case "Techglobe Lab":
+        // code block
+        url = "http://localhost:8083/";
+        break;
+      default:
+        // code block
+        url = "http://localhost:8083/";
+    }
+
     try {
       const res = await axios.get(url, {});
       const resp = res.data;
@@ -356,22 +377,46 @@ const RobotDetailPage: React.FC<RobotDetailPageProps> = ({ robotId }) => {
     }
   }
 
+  function handledropdownselect(
+    e?: React.SyntheticEvent<HTMLSelectElement, Event>
+  ) {
+    const _temp = e?.currentTarget.value.toString();
+    if (_temp) {
+      setStockdatasource({ data: _temp });
+    } else {
+      setStockdatasource({ data: "Alpaca Trading" });
+      let comp = document.getElementById("dropdown");
+      if (comp) {
+        comp.innerText = "Alpaca Trading"; // to fix it later
+      }
+    }
+  }
+
   const ref = useRef<any>(null);
+  const [times, setTimes] = useState({ data: 0 });
 
   useEffect(() => {
     ref.current = setInterval(async () => {
       loaddata_stocks();
-      loaddata_profits();
-      loaddata_balancedata();
-      loaddata_accountbalance();
-      loaddata_stockschedule();
-      loaddata_orderitems();
-      loaddata_positionitems();
-      loaddata_stockrankingshighdata();
-      loaddata_stockrankingsmediumdata();
-      loaddata_stockrankingslowdata();
-      loaddata_accountbalancedata();
-    }, 5 * 1000);
+
+      if (times.data % 10 == 0) {
+        loaddata_profits();
+        loaddata_balancedata();
+        loaddata_accountbalance();
+        loaddata_stockschedule();
+        loaddata_orderitems();
+        loaddata_positionitems();
+        loaddata_stockrankingshighdata();
+        loaddata_stockrankingsmediumdata();
+        loaddata_stockrankingslowdata();
+        loaddata_accountbalancedata();
+      }
+
+      setTimes({ data: times.data + 1 });
+      if (times.data > 10) {
+        setTimes({ data: 0 });
+      }
+    }, 0.5 * 1000);
 
     //run once
     loaddata_stocks();
@@ -694,7 +739,18 @@ const RobotDetailPage: React.FC<RobotDetailPageProps> = ({ robotId }) => {
         <div className="md:col-span-3">
           <Card>
             <CardContent className="p-4">
-              <div className="text-lg font-bold mb-4">Real-Time Trend</div>
+              <div className="text-lg font-bold mb-4">
+                RealTime Trend&nbsp;&nbsp;from
+                <select
+                  name="dropdown"
+                  id="dropdown"
+                  onChange={(e) => handledropdownselect(e)}
+                >
+                  <option value="Alpaca Trading">Alpaca Trading</option>
+                  <option value="Polygon">Polygon</option>
+                  <option value="Techglobe Lab">Techglobe Lab</option>
+                </select>
+              </div>
               <div className="space-y-2">
                 {stockdata1.data ? (
                   stockdata1.data.map((stock) => (
