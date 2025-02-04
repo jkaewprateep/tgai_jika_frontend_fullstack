@@ -200,13 +200,6 @@ const Navbar: React.FC = () => {
       href: `/${locale}/customer-list`,
       icon: FaUserTie,
       label: t("customerManagement"),
-    },
-    // {
-    //   href: `https://qiot.qualitybrain.tech/`,
-    //   icon: FaLightbulb,
-    //   label: 'Q-IoT',
-    // },
-  ];
 
   const toggleNavbar = () => setIsNavbarOpen(!isNavbarOpen);
 
@@ -232,7 +225,6 @@ const Navbar: React.FC = () => {
         ref={navbarRef}
         className={`fixed top-0 left-0 h-screen w-72 bg-green-200 dark:bg-green-800 text-gray-800 dark:text-gray-100 px-4 pt-6 transform transition-transform duration-500 ease-in-out z-40 overflow-auto shadow-lg rounded-tr-lg rounded-br-lg ${
           isNavbarOpen ? "translate-x-0" : "-translate-x-full"
-        } md:translate-x-0 md:relative md:flex md:flex-col`}
       >
         <div className="flex justify-center p-4">
           <Image
