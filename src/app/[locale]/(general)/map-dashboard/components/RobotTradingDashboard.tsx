@@ -73,7 +73,7 @@ const RobotTradingDashboard = () => {
   ];
 
   const timeSlots = Array.from({ length: 12 }, (_, i) => {
-    const hour = 20 + Math.floor(i / 2);
+    const hour = 18 + Math.floor(i / 2);
     const minute = i % 2 === 0 ? "00" : "30";
     return `${hour}:${minute}`;
   });
