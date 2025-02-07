@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { useTheme } from "@/context/ThemeContext";
@@ -10,6 +10,9 @@ import interactionPlugin from "@fullcalendar/interaction";
 import timeGridPlugin from "@fullcalendar/timegrid";
 
 import { Navigate } from "react-router-dom";
+
+import GlobalVariables from "../../app/[locale]/globalclass";
+import Navbar from "@/components/Navbar";
 
 // interface CalendarEvent {
 //   id: string;
@@ -29,16 +32,42 @@ import { Navigate } from "react-router-dom";
 const Home: React.FC = () => {
   // const history = useHistory();
 
+  const [username, setUsername] = useState({ value: "robot_1" });
+  const [password, setPassword] = useState({ value: "1234" });
+
+  const ref = useRef({
+    authen: false,
+  });
+
   function authentication(username: string, password: string) {
     if (username === "robot_1" && password === "1234") {
       // navigate("/main", {
       //   replace: false,
       //   state: { username: username },
       // });
-      alert("Welcome " + username);
-      alert(window.location.href);
+      // alert("Welcome " + username);
+      // alert(window.location.href);
 
-      const target = window.location.href + "?" + username;
+      let target = window.location.href;
+      // alert(window.location.href.substring(25, 25 + username.length));
+
+      if (
+        window.location.href.substring(25, 25 + username.length) !== username
+      ) {
+        target = window.location.href + "?" + username;
+      }
+      // if (window.location.href.substring(0, 32) !== ""  ){
+      //   target = window.location.href + "?" + username;
+      // }
+
+      //
+      // GlobalVariables.createVariables();
+      // GlobalVariables.setXP(username);
+      // GlobalVariables.setAuthen(true);
+
+      // alert(GlobalVariables.getAuthen());
+
+      // ref.current.authen = true;
 
       // http://localhost:3000/th
       window.location.replace(target);
@@ -108,6 +137,8 @@ const Home: React.FC = () => {
                     type="text"
                     id="username_textbox"
                     name="username_textbox"
+                    value={username.value}
+                    onChange={(e) => setUsername({ value: e.target.value })}
                     // value={buyprice.data}
                     // onChange={handleStockpricechange}
                   />
@@ -120,9 +151,11 @@ const Home: React.FC = () => {
                 <td>
                   <input
                     className="border p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
-                    type="text"
+                    type="password"
                     id="password_textbox"
                     name="password_textbox"
+                    value={password.value}
+                    onChange={(e) => setPassword({ value: e.target.value })}
                     // value={buyprice.data}
                     // onChange={handleStockpricechange}
                   />

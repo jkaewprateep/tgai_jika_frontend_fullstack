@@ -33,6 +33,9 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import { useTheme } from "@/context/ThemeContext";
 import { LinkItem, NavbarLinkProps } from "@/types";
 
+import GlobalVariables from "../app/[locale]/globalclass";
+import getAuthen from "../app/[locale]/globalclass";
+
 const NavbarLink: React.FC<NavbarLinkProps> = ({
   href,
   label,
@@ -63,6 +66,27 @@ const Navbar: React.FC = () => {
   const navbarRef = useRef<HTMLDivElement>(null);
   const { isDarkMode, toggleTheme } = useTheme();
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
+
+  // alert(window.location.href);
+
+  //
+  // const username = GlobalVariables.getXP();
+  // GlobalVariables.createVariables();
+  const ref = useRef({
+    authen: false,
+  });
+
+  // const location = window.location.href;
+  if (window) {
+    if (window.location.href.substring(0, 25) === "http://localhost:3000/th?") {
+      ref.current.authen = true;
+    }
+  }
+
+  // GlobalVariables.setAuthen(true);
+  const [authen, setAuthen] = useState(GlobalVariables.getAuthen());
+  // setAuthen(true);
+  // GlobalVariables.createVariables();
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -262,15 +286,17 @@ const Navbar: React.FC = () => {
                 {t("general")}
               </span>
               <ul className="mt-2 space-y-2">
-                {links.map(({ href, icon: Icon, label }) => (
-                  <NavbarLink
-                    key={href}
-                    href={href}
-                    label={label}
-                    Icon={Icon}
-                    pathname={pathname}
-                  />
-                ))}
+                {ref.current.authen
+                  ? links.map(({ href, icon: Icon, label }) => (
+                      <NavbarLink
+                        key={href}
+                        href={href}
+                        label={label}
+                        Icon={Icon}
+                        pathname={pathname}
+                      />
+                    ))
+                  : "Please login"}
               </ul>
             </li>
 
